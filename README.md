@@ -18,3 +18,6 @@ You can create a 100% shortcode for your user to be able to test the plugin func
 ## Troubleshooting
 Do you have troubles with using the plugin? [Submit an Issue on GitHub](https://github.com/Proxeuse/Woocommerce-Rocket.Chat-Notifications/issues/new) or contact us directly at [info@proxeuse.com](mailto:info@proxeuse.com).
 You can also use `ECHO` statements to output text to the Thank You page.
+
+## Contributors
+[@lomars](https://github.com/lomars) - Thank you for writing the original [WooCommerce hook](https://stackoverflow.com/a/42533543) that allowed us to further develop the plugin.
