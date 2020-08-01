@@ -13,7 +13,7 @@ That should be it for the configuration part. If you are a more experienced PHP 
 ## Testing
 In order for you to test the new plugin we recommend you to uncomment (add to slashes in front of) line 137 `$order->update_meta_data( '_thankyou_action_done', true );`
 If you have made changes to the Module settings you can refresh the Thank You page to post a new message in your Rocket.Chat channel.
-You can create a 100% shortcode for your user to be able to test the plugin functionality without actually having to pay.
+You can create a 100% discount code for your user in WordPress to be able to test the plugin functionality without actually having to pay.
 
 ## Troubleshooting
 Do you have troubles with using the plugin? [Submit an Issue on GitHub](https://github.com/Proxeuse/Woocommerce-Rocket.Chat-Notifications/issues/new) or contact us directly at [info@proxeuse.com](mailto:info@proxeuse.com).
