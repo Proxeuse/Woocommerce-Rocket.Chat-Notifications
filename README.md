@@ -1,6 +1,6 @@
 # Woocommerce-Rocket.Chat-Notifications
 This WordPress plugin notifies you of new orders placed by your customers through one of your Rocket.Chat channels. The plugin uses the `woocommerce_thankyou` hook and therefore only runs if a customer places a order in the frontend.
-Setting up the plugin must be done manually and cannot be done in the WordPress dashboard. However, it is a simple process that will take you less than 5 minutes to complete.
+The plugin does not have a WordPress settings page and must therefore be configured in the PHP file. However, it is a simple process that will take you less than 5 minutes to complete.
 
 ## Installation
 Download the GitHub repository by cloning it or [downloading it as a zip file](https://github.com/Proxeuse/Woocommerce-Rocket.Chat-Notifications/archive/master.zip). Then extract the folder and upload the `woocommerce-rocket-chat-order-notifications` folder to your `/wp-content/plugins/` directory. The plugin is now installed but not yet configured.
@@ -11,9 +11,9 @@ Firstly you should open the `woocommerce-rocket-chat-order-notifications.php` so
 That should be it for the configuration part. If you are a more experienced PHP developer/user you can edit other things such as the message send to the Rocket.Chat API.
 
 ## Testing
-In order for you to test the new plugin we recommend you to uncomment (add to slashes in front of) line 137 `$order->update_meta_data( '_thankyou_action_done', true );`
+In order for you to test the new plugin we recommend you to uncomment (add to slashes in front of) line 131 `// $order->update_meta_data( '_thankyou_action_done', true );`
 If you have made changes to the Module settings you can refresh the Thank You page to post a new message in your Rocket.Chat channel.
-You can create a 100% discount code for your user in WordPress to be able to test the plugin functionality without actually having to pay.
+You can create a 100% discount code for your user in WooCommerce to be able to test the plugin functionality without actually having to pay.
 
 ## Troubleshooting
 Do you have troubles with using the plugin? [Submit an Issue on GitHub](https://github.com/Proxeuse/Woocommerce-Rocket.Chat-Notifications/issues/new) or contact us directly at [info@proxeuse.com](mailto:info@proxeuse.com).
