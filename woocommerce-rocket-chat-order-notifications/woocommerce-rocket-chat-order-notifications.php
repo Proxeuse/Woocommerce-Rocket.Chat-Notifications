@@ -32,15 +32,6 @@
 
      // Get an instance of the WC_Order object
      $order = wc_get_order( $order_id );
-     // Get the order key
-     $order_key = $order->get_order_key();
-     // Get the order number
-     $order_number = $order->get_order_number();
-
-     if($order->is_paid())
-        $paid = __('yes');
-     else
-        $paid = __('no');
 
     // Request User ID and Auth Token by Rocket.Chat API
     // start curl request
@@ -83,19 +74,21 @@
 
 		// Loop through order items
 		foreach ( $order->get_items() as $item_id => $item ) {
-			// Get the product name
-			$productName = $item->get_name();
       // if only one product in order
 			if($ordercount = 1){
 				// add product name to the message
-				$message .= "$productName";
+				$message .= $item->get_name();
 			}
       // if more products in order
 			else{
-        // add all products
-				$message .= "$productName, ";
+        // add product to array
+				$productsArray[] = $item->get_name();
 			}
 		}
+    // implode array to string
+    $products = implode(",", $productsArray);
+    // add string to message
+    $message .= $products;
 
 		// add a link to WooCommerce view order page
 		$message .= "\n $orderURL \n \n";
@@ -105,6 +98,7 @@
       // add to message
 			$message .= "*Subtotal:* $ordersubtotal \n *Discount:* $discount \n *Taxes:* $odervat \n *Total:* $ordertotal \n";
 		}
+    // no discount
 		else{
       // add to message
 			$message .= "*Subtotal:* $ordersubtotal \n *Taxes:* $odervat \n *Total:* $ordertotal \n";
